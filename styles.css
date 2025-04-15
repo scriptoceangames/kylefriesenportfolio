@@ -198,7 +198,7 @@ section p {
 
     .project-box iframe {
         width: 100%;
-        height: 320px; /* increased height */
+        height: 420px; /* was 315px */
         border: 2px solid #000;
     }
 
