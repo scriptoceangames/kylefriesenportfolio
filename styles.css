@@ -277,9 +277,21 @@ section p {
         flex: 1 1 100%;
     }
 
-    .project-box iframe {
-        height: 240px; /* Slightly shorter on mobile for fit */
+    .projects-container {
+        flex-direction: column;
+        gap: 20px;
     }
+
+    .project-box {
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+        .project-box iframe {
+            width: 100%;
+            height: 240px; /* Adjust height for mobile */
+        }
 
     .container {
         margin: 20px;
