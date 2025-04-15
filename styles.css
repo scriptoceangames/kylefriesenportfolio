@@ -15,12 +15,14 @@ body {
 }
 
 .container {
+    width: 90%;
     max-width: 960px;
     margin: 40px auto;
     padding: 20px;
     background: #f0f0f0;
     border: 2px solid #000;
     box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+    box-sizing: border-box;
 }
 
 header {
@@ -153,15 +155,17 @@ section p {
 /* Skills Section */
 .skills-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .skills-column {
+    width: 100%;
+    flex: 1 1 100%;
+    box-sizing: border-box;
     background: #f0f0f0;
     border: 2px solid #000;
     padding: 12px;
-    flex: 1 1 45%;
     box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
 }
 
@@ -298,3 +302,22 @@ section p {
         padding: 10px;
     }
 }
+
+.buzz-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.buzz-item {
+    background: #f0f0f0;
+    border: 2px solid #000;
+    padding: 16px;
+    box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+}
+
+    .buzz-item iframe,
+    .buzz-item blockquote {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
