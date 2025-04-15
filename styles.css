@@ -229,41 +229,60 @@ section p {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .skills-container {
-        flex-direction: column;
-    }
-
-    .skills-column {
-        flex: 1 1 100%;
-    }
-}
-
-@media (max-width: 768px) {
     .header-bar {
         grid-template-columns: 1fr;
+        gap: 20px;
         text-align: center;
-        gap: 10px;
-    }
-
-    .header-left,
-    .header-center,
-    .header-controls {
-        justify-self: center;
-        flex-direction: column;
-        align-items: center;
     }
 
     .header-left {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
     }
 
-    nav {
+    .header-center nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
     }
 
-        nav a {
-            margin: 6px 6px;
-        }
+    nav a {
+        margin: 5px;
+        font-size: 0.9em;
+    }
+
+    .header-controls {
+        justify-content: center;
+    }
+
+    .profile-pic-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-pic {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skills-column {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .project-box iframe {
+        height: 240px; /* Slightly shorter on mobile for fit */
+    }
+
+    .container {
+        margin: 20px;
+        padding: 10px;
+    }
 }
