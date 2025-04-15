@@ -325,3 +325,9 @@ section p {
         max-width: 100%;
         overflow-x: hidden;
     }
+
+.twitter-tweet {
+    margin: 0 auto !important;
+    display: block !important;
+    text-align: center;
+}
