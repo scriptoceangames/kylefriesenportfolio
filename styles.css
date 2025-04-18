@@ -14,6 +14,10 @@ body {
     line-height: 1.5;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .container {
     width: 90%;
     max-width: 960px;
@@ -22,9 +26,9 @@ body {
     background: #f0f0f0;
     border: 2px solid #000;
     box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
-    box-sizing: border-box;
 }
 
+/* HEADER */
 header {
     background: transparent;
     padding: 0;
@@ -32,20 +36,27 @@ header {
 }
 
 .header-bar {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 10px 20px;
     background: #dcdcdc;
     border: 2px solid #000;
     box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
 }
 
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .header-left {
     display: flex;
     align-items: center;
     gap: 16px;
-    justify-self: start;
+    flex-wrap: wrap;
 }
 
 .header-text h1 {
@@ -59,20 +70,9 @@ header {
     color: #222;
 }
 
-.header-center {
-    justify-self: center;
-}
-
-    .header-center nav {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-    }
-
 .header-controls {
     display: flex;
     gap: 6px;
-    justify-self: end;
 }
 
 .mac-dot {
@@ -95,9 +95,15 @@ header {
         background: #3c3;
     }
 
-nav a {
+.header-nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.header-nav a {
     font-size: 0.95em;
-    margin: 0 6px;
     text-decoration: none;
     color: #000;
     border: 1px solid #000;
@@ -106,32 +112,35 @@ nav a {
     box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
 }
 
-    nav a:hover {
+    .header-nav a:hover {
         background: #fff;
         cursor: pointer;
     }
 
-/* Profile Picture Frame */
+/* PROFILE PICTURE */
 .profile-pic-wrapper {
     width: 120px;
-    height: 120px;
-    padding: 6px;
-    background: #fff;
-    border: 2px solid #000;
-    box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+    aspect-ratio: 1 / 1;
+    background: #ffffff;
+    border: 2px solid #000000;
+    padding: 4px;
+    box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff;
     position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .profile-pic {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     border: none;
 }
 
 
 
-/* Sections */
+/* SECTIONS */
 section {
     background: #fff;
     border: 2px solid #000;
@@ -152,7 +161,7 @@ section p {
     font-size: 0.95em;
 }
 
-/* Skills Section */
+/* SKILLS */
 .skills-container {
     display: flex;
     flex-direction: column;
@@ -162,7 +171,6 @@ section p {
 .skills-column {
     width: 100%;
     flex: 1 1 100%;
-    box-sizing: border-box;
     background: #f0f0f0;
     border: 2px solid #000;
     padding: 12px;
@@ -181,7 +189,7 @@ section p {
         padding: 0;
     }
 
-/* Projects */
+/* PROJECTS */
 .projects-container {
     display: flex;
     flex-direction: column;
@@ -202,7 +210,7 @@ section p {
 
     .project-box iframe {
         width: 100%;
-        height: 420px; /* was 315px */
+        height: 420px;
         border: 2px solid #000;
     }
 
@@ -224,110 +232,74 @@ section p {
         cursor: pointer;
     }
 
-/* Contact */
+/* MEDIA BUZZ */
+.buzz-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.buzz-item {
+    width: 100%;
+    max-width: 600px;
+    background: #f0f0f0;
+    border: 2px solid #000;
+    padding: 16px;
+    box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.twitter-tweet {
+    margin: 0 auto !important;
+    display: block !important;
+    text-align: center;
+}
+
+/* CONTACT */
 #contact a {
     font-weight: bold;
     color: #000;
     text-decoration: underline;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .header-bar {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        text-align: center;
+    .container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
     }
 
     .header-left {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .header-center nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        margin: 5px;
-        font-size: 0.9em;
+        text-align: center;
     }
 
     .header-controls {
         justify-content: center;
     }
 
-    .profile-pic-wrapper {
-        width: 100px;
-        height: 100px;
-    }
-
-    .profile-pic {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .skills-container {
+    .header-nav nav {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
+        gap: 6px;
     }
 
-    .skills-column {
+    .header-nav a {
         width: 100%;
-        flex: 1 1 100%;
+        max-width: 200px;
+        text-align: center;
     }
 
-    .projects-container {
-        flex-direction: column;
-        gap: 20px;
+    .project-box iframe {
+        height: 240px;
     }
-
-    .project-box {
-        width: 100%;
-        padding: 12px;
-        box-sizing: border-box;
-    }
-
-        .project-box iframe {
-            width: 100%;
-            height: 240px; /* Adjust height for mobile */
-        }
-
-    .container {
-        margin: 20px;
-        padding: 10px;
-    }
-}
-
-.buzz-feed {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* ?? this centers child blocks */
-    gap: 20px;
-}
-
-.buzz-item {
-    width: 100%;
-    max-width: 600px; /* you can adjust this */
-    background: #f0f0f0;
-    border: 2px solid #000;
-    padding: 16px;
-    box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
-    box-sizing: border-box;
-}
-
-    .buzz-item iframe,
-    .buzz-item blockquote {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-.twitter-tweet {
-    margin: 0 auto !important;
-    display: block !important;
-    text-align: center;
 }
